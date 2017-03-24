@@ -1,0 +1,55 @@
+{
+  "project": {
+    "version": "1.0.0-beta.17",
+    "name": "enginnering-thesis"
+  },
+  "apps": [
+    {
+      "root": "src",
+      "outDir": "dist",
+      "assets": "assets",
+      "index": "index.html",
+      "main": "main.ts",
+      "test": "test.ts",
+      "tsconfig": "tsconfig.json",
+      "prefix": "app",
+      "mobile": false,
+      "styles": [
+        "styles.css",
+        "assets/template/assets/css/styles.css",
+        "assets/template/assets/plugins/font-awesome/css/font-awesome.min.css",
+        "assets/template/assets/plugins/perfect-scrollbar/css/perfect-scrollbar.min.css"
+
+      ],
+      "scripts": [
+        "assets/template/assets/bootstrap/js/bootstrap.min.js",
+        "assets/template/assets/plugins/chart-js/Chart.min.js",
+        "assets/template/assets/plugins/count-to/jquery.countTo.js",
+        "assets/template/assets/plugins/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js",
+        "assets/template/assets/js/custom.js"
+
+      ],
+      "environments": {
+        "source": "environments/environment.ts",
+        "dev": "environments/environment.ts",
+        "prod": "environments/environment.prod.ts"
+      }
+    }
+  ],
+  "addons": [],
+  "packages": [],
+  "e2e": {
+    "protractor": {
+      "config": "./protractor.conf.js"
+    }
+  },
+  "test": {
+    "karma": {
+      "config": "./karma.conf.js"
+    }
+  },
+  "defaults": {
+    "styleExt": "css",
+    "prefixInterfaces": false
+  }
+}

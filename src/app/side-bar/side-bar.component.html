@@ -1,0 +1,68 @@
+<div class="sidebar" style="position:fixed">
+
+  <!-- Close button (mobile devices) -->
+  <div class="sidebar__close">
+    <img src="assets/img/close.svg" alt="Close sidebar">
+  </div>
+
+  <!-- Sidebar user -->
+  <div class="sidebar__user">
+
+    <!-- Sidebar user avatar -->
+    <div class="sidebar-user__avatar">
+      <img src="http://127.0.0.1:8080/images/{{user.userName}}/{{user.imagename}}.{{user.imageext}}" alt="...">
+    </div>
+
+    <!-- Sidebar user info -->
+    <a class="sidebar-user__info">
+      <h4>{{user.userName}}</h4>
+      <p *ngIf="isMaster">CAD Master</p>
+      <p *ngIf="!isMaster">CAD Designer</p>
+    </a>
+
+  </div>
+
+  <!-- Sidebar user nav -->
+  <nav class="sidebar-user__nav">
+    <ul class="sidebar__nav">
+      <li>
+        <a routerLinkActive="active" [routerLink]="['user-current']"><i class="fa fa-user"></i> Profile</a>
+      </li>
+      <li>
+        <a routerLinkActive="active" [routerLink]="['/main','user-files',user.userName]"><i class="fa fa-edit"></i> Your files</a>
+      </li>
+      <li>
+        <a href="#" (click)="onLogout()"><i class="fa fa-sign-out"></i> Sign out</a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Sidebar nav -->
+  <nav>
+    <ul class="sidebar__nav">
+      <!-- Refresh -->
+      <li *ngIf="isMaster" class="sidebar-nav__heading">Master Menu</li>
+      <li *ngIf="!isMaster" class="sidebar-nav__heading">Designer Menu</li>
+      <li>
+        <a href="#"><i class="fa fa-th-large"></i> Refresh</a>
+      </li>
+      <!-- Team -->
+      <li class="sidebar-nav__heading">TEAM</li>
+      <li>
+        <a routerLinkActive="active" [routerLink]="['user-show']"><i class="fa fa-user"></i> Designers</a>
+      </li>
+      <li>
+        <a *ngIf="isMaster" routerLinkActive="active" [routerLink]="['user-create']"><i class="fa fa-user"></i> New designer</a>
+      </li>
+      <!-- Projects -->
+      <li class="sidebar-nav__heading">PROJETS</li>
+      <li>
+        <a routerLinkActive="active" [routerLink]="['project-show']"><i class="fa fa-table"></i> Projects <i class="fa"></i></a>
+      </li>
+      <li>
+        <a *ngIf="isMaster" routerLinkActive="active" [routerLink]="['project-create']"><i class="fa fa-table"></i> Add project <i class="fa"></i></a>
+      </li>
+    </ul>
+  </nav>
+
+</div>

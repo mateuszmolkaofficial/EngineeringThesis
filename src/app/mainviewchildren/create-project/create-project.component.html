@@ -1,0 +1,46 @@
+<div class="col-md-10 col-md-offset-1">
+  <div class="row">
+    <div class="col-xs-12">
+
+      <h3 class="page-header">
+        New <small>project</small>
+      </h3>
+
+    </div>
+  </div>
+  <div class="panel panel-default ">
+    <div class="panel-heading">
+      <h4 class="panel-title">Choose project name and type to create new one</h4>
+    </div>
+    <div class="panel-body">
+
+      <form class="form-horizontal" [formGroup]="myForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="projectName" class="col-sm-2 control-label">Project Name</label>
+          <div class="col-sm-10">
+            <input type="projectName" class="form-control" id="projectName" placeholder="Project Name" formControlName="projectName">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="type" class="col-sm-2 control-label">Project Type</label>
+          <div class="col-sm-10">
+            <select class="form-control" type="type" id="type" formControlName="projectType">
+              <option selected="true" style="display:none;"></option>
+              <option>Construction</option>
+              <option>Drawing</option>
+              <option>Calculation</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" [disabled]="!myForm.valid" class="btn btn-primary">Create new project</button>
+          </div>
+        </div>
+
+      </form>
+
+
+    </div>
+  </div>
+</div>

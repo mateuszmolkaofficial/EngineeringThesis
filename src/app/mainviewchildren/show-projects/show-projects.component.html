@@ -1,0 +1,59 @@
+<div class="row col-md-9 col-md-offset-2">
+  <div class="col-xs-12">
+
+    <h3 class="page-header">
+      All <small>projects</small>
+    </h3>
+
+  </div>
+</div>
+<div class="row col-md-9 col-xs-offset-2">
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">CAD Company Projects</h4>
+      </div>
+      <div class="panel-body">
+        <div class="table-responsive">
+          <table class="table dataTable no-footer" id="datatables__example">
+            <thead>
+            <tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="datatables__example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="
+                          Name
+                        : activate to sort column descending" style="width: 368px;">
+              Name
+            </th><th class="sorting" tabindex="0" aria-controls="datatables__example" rowspan="1" colspan="1" aria-label="
+                          Account type
+                        : activate to sort column ascending" style="width: 276px;">
+              Project Type
+            </th>
+              </tr>
+            </thead>
+            <tbody>
+
+            <tr role="row" class="odd"
+                *ngFor="let project of projects">
+              <td class="sorting_1">
+                <div class="table__avatar">
+                  <img *ngIf="project.projectType==='Construction'" src="http://127.0.0.1:8080/project-images/construction.png" alt="...">
+                  <img *ngIf="project.projectType==='Calculation'" src="http://127.0.0.1:8080/project-images/calculation.png" alt="...">
+                  <img *ngIf="project.projectType==='Drawing'"     src="http://127.0.0.1:8080/project-images/drawing.jpg" alt="...">
+                </div>
+                <strong><a
+                  [routerLink]="['/main','project-files',project.projectName]">{{project.projectName}}
+                </a></strong>
+              </td>
+              <td >
+                {{project.projectType}}
+              </td>
+              <td >
+                <button *ngIf="isMaster" class="btn btn-danger" (click)="onDelete(project)">Delete</button>
+              </td>
+            </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

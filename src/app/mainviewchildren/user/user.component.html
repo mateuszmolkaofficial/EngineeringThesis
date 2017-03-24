@@ -1,0 +1,43 @@
+<div class="col-md-10 col-md-offset-1">
+  <div class="row">
+    <div class="col-xs-12">
+      <h3 class="page-header">
+        User <small>Profile</small>
+      </h3>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+    </div>
+    <div class="panel-body">
+      <div class="profile__avatar">
+        <img img src="http://127.0.0.1:8080/images/{{user.userName}}/{{user.imagename}}.{{user.imageext}}" alt=""/>
+      </div>
+      <div class="profile__header">
+        <h4>{{user.firstName}} {{user.lastName}}<small *ngIf="isMaster"> Master designer</small> <small *ngIf="!isMaster">Designer</small></h4>
+        <div class="panel-body">
+          <table class="table profile__table">
+            <tbody>
+            <tr>
+              <th><strong>Company</strong></th>
+              <td>Cad Company</td>
+            </tr>
+            <tr>
+              <th><strong>Files</strong></th>
+              <td><a [routerLink]="['/main','user-files',user.userName]"> Files' list</a></td>
+            </tr>
+            <tr>
+              <th><strong>Contact</strong></th>
+              <td>{{user.email}}</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          <a href="#">www.cad-company.com</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+</div>
